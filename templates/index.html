@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="calculator-title">CALCULATOR</div>
+            <div class="display">
+                <input type="text" id="display" value="{{ display }}" readonly>
+            </div>
+
+            <form id="calculator-form" onsubmit="return false;">
+                <div class="buttons">
+                    <div class="row">
+                        <button type="button" class="btn special" value="(">(</button>
+                        <button type="button" class="btn special" value=")">)</button>
+                        <button type="button" class="btn special" value="%">%</button>
+                        <button type="button" class="btn special" value="AC">AC</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn" value="7">7</button>
+                        <button type="button" class="btn" value="8">8</button>
+                        <button type="button" class="btn" value="9">9</button>
+                        <button type="button" class="btn operator" value="/">÷</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn" value="4">4</button>
+                        <button type="button" class="btn" value="5">5</button>
+                        <button type="button" class="btn" value="6">6</button>
+                        <button type="button" class="btn operator" value="*">×</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn" value="1">1</button>
+                        <button type="button" class="btn" value="2">2</button>
+                        <button type="button" class="btn" value="3">3</button>
+                        <button type="button" class="btn operator" value="-">−</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn" value="0">0</button>
+                        <button type="button" class="btn" value=".">.</button>
+                        <button type="button" class="btn equals" value="=">=</button>
+                        <button type="button" class="btn operator" value="+">+</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- New history container -->
+            <div class="history-container">
+                <div class="history-title">History</div>
+                <div id="history-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
